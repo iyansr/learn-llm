@@ -15,8 +15,8 @@ const template = ChatPromptTemplate.fromTemplate(
 
 const parser = StructuredOutputParser.fromZodSchema(
   z.object({
-    answer: z.string(),
-    source: z.string(),
+    answer: z.string().describe("answer to the user's question"),
+    source: z.string().describe("source used to answer the user's question, should be a website."),
   })
 );
 
